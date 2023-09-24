@@ -7,3 +7,5 @@ Dockerfile
 .prettierrc
 node_modules
 .idea
+.svelte-kit
+build
