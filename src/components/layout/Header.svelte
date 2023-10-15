@@ -22,9 +22,15 @@
 	<div class="flex-none">
 		<ul class="menu menu-horizontal">
 			{#each headers as { href, text }}
-				<li>
-					<a class="btn btn-ghost" {href}>{text}</a>
-				</li>
+				{#if href === '/login'}
+					<li>
+						<a class="btn btn-sm btn-secondary" {href}>{text}</a>
+					</li>
+				{:else}
+					<li>
+						<a class="btn btn-ghost btn-sm" {href}>{text}</a>
+					</li>
+				{/if}
 			{/each}
 		</ul>
 	</div>
