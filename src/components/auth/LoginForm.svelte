@@ -1,43 +1,57 @@
 <script lang="ts">
 	import PrimaryButton from '../buttons/PrimaryButton.svelte';
+	import { login } from '$lib/auth/login';
+	import { goto } from '$app/navigation';
 
-	const formQuestions = [
-		{
-			question: 'Email',
-			type: 'email',
-			placeholder: 'example@email.com',
-			autocomplete: 'email',
-			value: ''
-		},
-		{
-			question: 'Password',
-			type: 'password',
-			placeholder: 'password123',
-			autocomplete: 'new-password',
-			value: ''
-		}
-	];
+	let email, password;
 </script>
 
-<div class="card flex-shrink-0 w-full max-w-sm shadow-2xl">
-	<form>
-		<div class="card-body bg-base-100">
-			{#each formQuestions as { question, type, placeholder, autocomplete, value }, i}
-				<div class="form-control">
-					<label class="label">
-						<span class="label-text">{question}</span>
-					</label>
-					<input class="input input-bordered" {type} {placeholder} {autocomplete} {value} />
-				</div>
-			{/each}
-			<label class="label">
-				<a href="/reset-password" class="btn btn-sm label-text-alt link link-hover"
-					>Forgot password?</a
-				>
+<div class="min-h-screen flex items-center justify-center">
+	<div class="w-full max-w-md">
+		<div class="bg-base-100 p-6 rounded-lg shadow-lg">
+			<h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
+			<div class="mb-4">
+				<label class="block label-text">Email</label>
+				<input
+					class="input input-bordered"
+					type="email"
+					placeholder="example@email.com"
+					autocomplete
+					bind:value={email}
+				/>
+			</div>
+			<div class="mb-4">
+				<label class="block label-text">Password</label>
+				<input
+					class="input input-bordered"
+					type="password"
+					placeholder="password123"
+					autocomplete
+					bind:value={password}
+				/>
+			</div>
+			<label class="block text-gray-700 text-right">
+				<a href="/reset-password" class="text-blue-500 hover:underline">Forgot password?</a>
 			</label>
-			<div class="form-control mt-6">
-				<PrimaryButton>Login</PrimaryButton>
+			<div class="mt-6">
+				<PrimaryButton
+					on:click={async () => {
+						if (!email || !password) {
+							return alert('Please fill out all fields');
+						}
+						let apikey;
+						try {
+							apikey = await login(email, password);
+						} catch (error) {
+							return alert(error.message);
+						}
+						localStorage.setItem('apikey', apikey);
+						await goto('/dashboard');
+					}}
+				>
+					Login
+				</PrimaryButton>
 			</div>
 		</div>
-	</form>
+	</div>
 </div>

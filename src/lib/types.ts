@@ -1,0 +1,3 @@
+interface APIKeyResponse {
+	apikey: string;
+}

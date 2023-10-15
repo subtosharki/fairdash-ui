@@ -1,9 +1,16 @@
-<script>
+<script lang="ts">
 	import RegisterForm from '../components/auth/RegisterForm.svelte';
+	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
+	onMount(async () => {
+		if (localStorage.getItem('apikey')) {
+			await goto('/home');
+		}
+	});
 </script>
 
 <svelte:head>
-	<title>Join FairDash Today!</title>
+	<title>FairDash - Join Today!</title>
 </svelte:head>
 
 <div class="hero min-h-screen bg-base-200">

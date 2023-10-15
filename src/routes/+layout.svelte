@@ -3,6 +3,7 @@
 	import Header from '../components/layout/Header.svelte';
 	import Footer from '../components/layout/Footer.svelte';
 	import { browser } from '$app/environment';
+	import { ProgressRadial } from '@skeletonlabs/skeleton';
 </script>
 
 {#if browser}
@@ -10,5 +11,7 @@
 	<slot />
 	<Footer />
 {:else}
-	<div class="loading loading-spinner loading-lg loading-dark" />
+	<div class="min-h-screen flex items-center justify-center">
+		<ProgressRadial />
+	</div>
 {/if}

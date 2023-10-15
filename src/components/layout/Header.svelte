@@ -1,6 +1,10 @@
 <script lang="ts">
 	const headers = [
 		{
+			href: '/how-it-works',
+			text: 'How it Works'
+		},
+		{
 			href: '/work-with-us',
 			text: 'Work with Us'
 		},

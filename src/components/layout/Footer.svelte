@@ -10,8 +10,8 @@
 				text: 'Food Delivery'
 			},
 			{
-				href: '/services/become-a-fair-owner',
-				text: 'Become a Fair Owner'
+				href: '/services/become-a-fair-organizer',
+				text: 'Become a Fair Organizer'
 			},
 			{
 				href: '/services/runner-application',
@@ -24,15 +24,15 @@
 				text: 'About Us'
 			},
 			{
-				href: '/company/contact',
-				text: 'Contact'
+				href: '/company/contact-us',
+				text: 'Contact Us'
 			},
 			{
 				href: '/company/jobs',
 				text: 'Jobs'
 			},
 			{
-				href: '/company/faqs',
+				href: '/company/faq',
 				text: 'FAQs'
 			}
 		],

@@ -31,6 +31,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@tailwindcss/typography": "^0.5.10"
+		"@skeletonlabs/skeleton": "^2.3.0",
+		"@tailwindcss/typography": "^0.5.10",
+		"crypto-js": "^4.1.1"
 	}
 }
