@@ -6,11 +6,11 @@
 		},
 		{
 			title: 'User Accounts',
-			body: 'To access certain features of FairDash, you may be required to create a user account. You are responsible for maintaining the confidentiality of your account credentials. You agree to provide accurate, current, and complete information during the registration process. FairDash reserves the right to suspend or terminate your account if you violate these terms or engage in any unlawful or inappropriate conduct.'
+			body: 'To access certain features of FairDash, you may be required to register a users account. You are responsible for maintaining the confidentiality of your account credentials. You agree to provide accurate, current, and complete information during the registration process. FairDash reserves the right to suspend or terminate your account if you violate these terms or engage in any unlawful or inappropriate conduct.'
 		},
 		{
 			title: 'Fair Owners and Vendors',
-			body: "Fair owners and vendors using FairDash must agree to additional terms and conditions that govern their use of the platform. Fair owners are responsible for the content they post on FairDash, including fair event information and vendor listings. Vendors have control over their menu and availability and must adhere to FairDash's policies."
+			body: "Fair owners and vendors using FairDash must agree to additional terms and conditions that govern their use of the platform. Fair owners are responsible for the content they post on FairDash, including fairs event information and vendor listings. Vendors have control over their menu and availability and must adhere to FairDash's policies."
 		},
 		{
 			title: 'Intellectual Property',
@@ -18,7 +18,7 @@
 		},
 		{
 			title: 'User Content',
-			body: 'Users may submit content, including reviews, comments, and ratings. You are solely responsible for the content you submit. FairDash may remove or edit user content that violates these terms or is deemed inappropriate.'
+			body: 'Users may submit content, including reviews, comments, and ratings. You are solely responsible for the content you submit. FairDash may remove or edit users content that violates these terms or is deemed inappropriate.'
 		},
 		{
 			title: 'Privacy',
@@ -26,7 +26,7 @@
 		},
 		{
 			title: 'Disclaimers and Limitation of Liability',
-			body: 'FairDash is provided "as is" without warranties of any kind, either express or implied. FairDash is not responsible for the actions or conduct of users, fair owners, vendors, or third parties. FairDash is not liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the platform.'
+			body: 'FairDash is provided "as is" without warranties of any kind, either express or implied. FairDash is not responsible for the actions or conduct of users, fairs owners, vendors, or third parties. FairDash is not liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of the platform.'
 		},
 		{
 			title: 'Termination',

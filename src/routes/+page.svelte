@@ -2,9 +2,18 @@
 	import RegisterForm from '../components/auth/RegisterForm.svelte';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { getCurrentUser } from '$lib/users/getCurrent';
+
 	onMount(async () => {
 		if (localStorage.getItem('apikey')) {
-			await goto('/home');
+			const user = await getCurrentUser(localStorage.getItem('apikey'));
+			if (!user) {
+				localStorage.removeItem('apikey');
+			} else if (user.role === 'organizer') {
+				await goto('/organizer/fair/dashboard');
+			} else if (user.role === 'user') {
+				await goto('/dashboard');
+			}
 		}
 	});
 </script>

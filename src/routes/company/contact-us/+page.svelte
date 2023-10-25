@@ -1,7 +1,3 @@
-<script>
-	import PrimaryButton from '../../../components/buttons/PrimaryButton.svelte';
-</script>
-
 <svelte:head>
 	<title>FairDash - Contact Us</title>
 </svelte:head>
@@ -48,7 +44,7 @@
 				</div>
 
 				<div class="mb-6">
-					<PrimaryButton>Send Message</PrimaryButton>
+					<button class="btn btn-primary">Send Message</button>
 				</div>
 			</form>
 		</div>

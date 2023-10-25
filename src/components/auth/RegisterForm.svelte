@@ -1,20 +1,43 @@
 <script lang="ts">
-	import PrimaryButton from '../buttons/PrimaryButton.svelte';
 	import { register } from '$lib/auth/register';
 	import { goto } from '$app/navigation';
 	import { ENCRYPTION_KEY } from '$lib/consts';
 	import { AES, enc } from 'crypto-js';
 
-	export const asOrganizer = false;
+	export let asOrganizer = false;
+	export let title = 'Start Using FairDash Today!'
 
 	let email, firstName, lastName, phoneNumber, password, confirmPassword;
 </script>
 
 <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-	<div class="card-header flex justify-center pb-5 pt-5">
-		<h1 class="card-title text-2xl">Start Using FairDash Today!</h1>
+	<div class="card-header flex justify-center pt-5">
+		<h1 class="card-title text-2xl">{title}</h1>
 	</div>
-	<div class="card-body">
+	<form
+		class="card-body"
+		on:submit={async () => {
+			if (password !== confirmPassword) {
+				return alert('Passwords do not match');
+			}
+			let apikey = await register(
+				email,
+				firstName,
+				lastName,
+				phoneNumber,
+				password,
+				confirmPassword,
+				asOrganizer
+			);
+
+			localStorage.setItem('apikey', await AES.encrypt(apikey, ENCRYPTION_KEY).toString());
+			if (asOrganizer) {
+				await goto('/organizer/fair/register');
+			} else {
+				await goto('/dashboard');
+			}
+		}}
+	>
 		<div class="form-control">
 			<label class="label">
 				<span class="label-text text-lg">Email</span>
@@ -78,36 +101,7 @@
 		</div>
 
 		<div class="form-control mt-6">
-			<PrimaryButton
-				on:click={async () => {
-					if (!email || !firstName || !lastName || !phoneNumber || !password || !confirmPassword) {
-						return alert('Please fill out all fields');
-					}
-					if (password !== confirmPassword) {
-						return alert('Passwords do not match');
-					}
-					let apikey;
-					try {
-						apikey = register(
-							email,
-							firstName,
-							lastName,
-							phoneNumber,
-							password,
-							confirmPassword,
-							asOrganizer
-						);
-					} catch (e) {
-						return alert(e.message);
-					}
-					localStorage.setItem('apikey', AES.encrypt(apikey, ENCRYPTION_KEY).toString());
-					if (asOrganizer) {
-						await goto('/organizer/create');
-					} else {
-						await goto('/dashboard');
-					}
-				}}>Register</PrimaryButton
-			>
+			<button class="btn btn-primary">Register</button>
 		</div>
 		<div class="form-control mt-6">
 			<a href="/login" class="text-sm"
@@ -115,5 +109,5 @@
 			>
 			<div />
 		</div>
-	</div>
+	</form>
 </div>

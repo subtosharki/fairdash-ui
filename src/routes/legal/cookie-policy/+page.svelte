@@ -6,11 +6,11 @@
 		},
 		{
 			title: 'What Are Cookies',
-			body: 'Cookies are small text files that are stored on your device when you visit a website. They are widely used to make websites work more efficiently and to provide a better user experience. Cookies can be temporary (session cookies) or permanent (persistent cookies).'
+			body: 'Cookies are small text files that are stored on your device when you visit a website. They are widely used to make websites work more efficiently and to provide a better users experience. Cookies can be temporary (session cookies) or permanent (persistent cookies).'
 		},
 		{
 			title: 'Types of Cookies We Use',
-			body: "We use the following types of cookies on our website:\n\nNecessary Cookies: These cookies are essential for the basic functionality of our website. They are necessary for tasks such as user authentication and session management.\nPreference Cookies: These cookies are used to remember your preferences and settings.\nStatistical or Analytical Cookies: We use these cookies to collect information about how you interact with our website. This data helps us improve our website's content and user experience.\nMarketing or Advertising Cookies: These cookies are used to deliver personalized advertising content based on your interests and online behavior."
+			body: "We use the following types of cookies on our website:\n\nNecessary Cookies: These cookies are essential for the basic functionality of our website. They are necessary for tasks such as users authentication and session management.\nPreference Cookies: These cookies are used to remember your preferences and settings.\nStatistical or Analytical Cookies: We use these cookies to collect information about how you interact with our website. This data helps us improve our website's content and users experience.\nMarketing or Advertising Cookies: These cookies are used to deliver personalized advertising content based on your interests and online behavior."
 		},
 		{
 			title: 'Why We Use Cookies',

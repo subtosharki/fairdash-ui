@@ -9,33 +9,46 @@
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Question 1: What is FairDash?</h2>
 			<p>
-				FairDash is a platform that connects fairgoers with their favorite fair foods, providing
-				delivery to their RV spots. We combine the excitement of fair events with the convenience of
-				food delivery.
+				FairDash is a revolutionary platform that bridges the gap between fairgoers and their
+				cherished fair foods. We bring the excitement of fair events right to your RV spot by
+				offering convenient food delivery.
 			</p>
 		</div>
 
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Question 2: How do I place an order?</h2>
 			<p>
-				Simply browse the list of vendors, select the items you want, and add them to your cart.
-				Then, proceed to the checkout page to confirm your order and delivery details.
+				To order your favorite fair foods, simply select your desired items from the list of vendors
+				and add them to your cart. After making your selections, proceed to the checkout page to
+				confirm your order and provide your delivery details.
 			</p>
 		</div>
 
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Question 3: What payment methods are accepted?</h2>
 			<p>
-				We accept a variety of payment methods, including credit and debit cards. You can add your
-				payment information during the checkout process.
+				We offer various payment methods, including credit and debit cards. During the checkout
+				process, you can securely add your payment information.
 			</p>
 		</div>
 
 		<div class="mb-6">
-			<h2 class="text-lg font-semibold">Question 4: How can I contact FairDash support?</h2>
+			<h2 class="text-lg font-semibold">
+				Question 4: How does FairDash know where I am for delivery?
+			</h2>
 			<p>
-				If you have any questions or need assistance, please reach out to our support team at
-				support@fairdash.com or call us at [Your Contact Phone Number].
+				FairDash utilizes your RV or camper spot number to determine your location for delivery.
+				Simply provide your spot number during the ordering process.
+			</p>
+		</div>
+
+		<div class="mb-6">
+			<h2 class="text-lg font-semibold">
+				Question 5: Can I order food for delivery anywhere on the fairgrounds?
+			</h2>
+			<p>
+				No, you cannot. Food orders must be placed for delivery to designated RV or camper spots.
+				This ensures that your delicious fair foods are delivered to your specific location.
 			</p>
 		</div>
 	</div>

@@ -1,4 +1,5 @@
 import { API_URL } from '$lib/consts';
+import type { APIKeyResponse } from '$lib/types';
 
 export async function register(
 	email: string,
@@ -29,7 +30,7 @@ export async function register(
 		throw e;
 	}
 	if (!res.ok) {
-		throw new Error('Error registering user');
+		throw new Error('Error registering users');
 	}
 	return ((await res.json()) as APIKeyResponse)['apikey'];
 }

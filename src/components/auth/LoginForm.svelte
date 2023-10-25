@@ -1,5 +1,4 @@
 <script lang="ts">
-	import PrimaryButton from '../buttons/PrimaryButton.svelte';
 	import { login } from '$lib/auth/login';
 	import { goto } from '$app/navigation';
 
@@ -8,7 +7,17 @@
 
 <div class="min-h-screen flex items-center justify-center">
 	<div class="w-full max-w-md">
-		<div class="bg-base-100 p-6 rounded-lg shadow-lg">
+		<form
+			class="bg-base-100 p-6 rounded-lg shadow-lg"
+			on:submit={async () => {
+				let [apikey, role] = await login(email, password);
+				localStorage.setItem('apikey', apikey);
+				if (role === 'organizer') {
+					await goto('/organizer/dashboard');
+				}
+				await goto('/dashboard');
+			}}
+		>
 			<h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
 			<div class="mb-4">
 				<label class="block label-text">Email</label>
@@ -34,24 +43,8 @@
 				<a href="/reset-password" class="text-blue-500 hover:underline">Forgot password?</a>
 			</label>
 			<div class="mt-6">
-				<PrimaryButton
-					on:click={async () => {
-						if (!email || !password) {
-							return alert('Please fill out all fields');
-						}
-						let apikey;
-						try {
-							apikey = await login(email, password);
-						} catch (error) {
-							return alert(error.message);
-						}
-						localStorage.setItem('apikey', apikey);
-						await goto('/dashboard');
-					}}
-				>
-					Login
-				</PrimaryButton>
+				<button class="btn btn-primary"> Login </button>
 			</div>
-		</div>
+		</form>
 	</div>
 </div>

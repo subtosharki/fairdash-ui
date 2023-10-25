@@ -1,11 +1,11 @@
 import { API_URL } from '$lib/consts';
 
-export async function login(username: string, password: string) {
+export async function login(email: string, password: string) {
 	let res;
 	try {
 		res = await fetch(`${API_URL}/auth/login`, {
 			method: 'POST',
-			body: JSON.stringify({ username, password }),
+			body: JSON.stringify({ email, password }),
 			headers: {
 				'Content-Type': 'application/json'
 			}
@@ -17,5 +17,6 @@ export async function login(username: string, password: string) {
 	if (!res.ok) {
 		throw new Error('Invalid username or password');
 	}
-	return ((await res.json()) as APIKeyResponse)['apikey'];
+	const json = await res.json();
+	return [json['apikey'] as string, json['role'] as string];
 }
