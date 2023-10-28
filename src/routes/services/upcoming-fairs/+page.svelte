@@ -1,6 +1,6 @@
 <script>
 	import { getALlFairs } from '$lib/fairs/getAll.ts';
-	import {getUserBy} from "$lib/users/getBy.ts";
+	import { getUserBy } from '$lib/users/getBy.ts';
 </script>
 
 <svelte:head>
@@ -23,7 +23,8 @@
 						<h2 class="text-xl font-semibold">{fair.name}</h2>
 						<p class="text-gray-500">{fair.location}</p>
 						<p class="text-gray-500">Start Date: {fair.startDate} - End Date: {fair.endDate}</p>
-						<p class="text-gray-500">Organizer:
+						<p class="text-gray-500">
+							Organizer:
 							{#await getUserBy('id', fair.organizerId)}
 								Loading...
 							{:then organizer}

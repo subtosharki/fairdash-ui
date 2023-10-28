@@ -18,5 +18,5 @@ export async function login(email: string, password: string) {
 		throw new Error('Invalid username or password');
 	}
 	const json = await res.json();
-	return [json['apikey'] as string, json['role'] as string];
+	return [json['apikey'] as string, json['role'] as string, json['id']['$oid'] as string];
 }

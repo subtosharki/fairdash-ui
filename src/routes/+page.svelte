@@ -2,17 +2,30 @@
 	import RegisterForm from '../components/auth/RegisterForm.svelte';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { getCurrentUser } from '$lib/users/getCurrent';
+	import { getUserBy } from '$lib/users/getBy';
+	import {getALlFairs} from "$lib/fairs/getAll";
 
 	onMount(async () => {
 		if (localStorage.getItem('apikey')) {
-			const user = await getCurrentUser(localStorage.getItem('apikey'));
+			const user = await getUserBy('apikey', localStorage.getItem('apikey'));
 			if (!user) {
 				localStorage.removeItem('apikey');
-			} else if (user.role === 'organizer') {
-				await goto('/organizer/fair/dashboard');
-			} else if (user.role === 'user') {
-				await goto('/dashboard');
+			} else {
+				switch (user.role) {
+					case 'organizer':
+						const ownersFairs = await getALlFairs(user.id);
+						if (!ownersFairs) {
+							await goto('/organizer/fair/register');
+						} else {
+							await goto('/organizer/fair/dashboard');
+						}
+						break;
+					case 'user':
+						await goto('/dashboard');
+						break;
+					default:
+						break;
+				}
 			}
 		}
 	});

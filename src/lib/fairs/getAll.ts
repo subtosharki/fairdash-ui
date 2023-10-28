@@ -1,14 +1,17 @@
 import { API_URL } from '$lib/consts';
 import type { Fair } from '$lib/types';
 
-export async function getALlFairs() {
+export async function getALlFairs(ownerId?: string) {
 	let res;
 	try {
 		res = await fetch(`${API_URL}/fairs`, {
-			method: 'GET',
+			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
-			}
+			},
+			body: JSON.stringify({
+				id: ownerId ?? ''
+			})
 		});
 	} catch (e) {
 		console.error(e);

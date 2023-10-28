@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { register } from '$lib/auth/register';
 	import { goto } from '$app/navigation';
-	import { ENCRYPTION_KEY } from '$lib/consts';
-	import { AES, enc } from 'crypto-js';
 
 	export let asOrganizer = false;
-	export let title = 'Start Using FairDash Today!'
+	export let title = 'Start Using FairDash Today!';
 
 	let email, firstName, lastName, phoneNumber, password, confirmPassword;
 </script>
@@ -30,7 +28,7 @@
 				asOrganizer
 			);
 
-			localStorage.setItem('apikey', await AES.encrypt(apikey, ENCRYPTION_KEY).toString());
+			localStorage.setItem('apikey', apikey);
 			if (asOrganizer) {
 				await goto('/organizer/fair/register');
 			} else {
@@ -47,6 +45,7 @@
 				type="email"
 				placeholder="example@email.com"
 				bind:value={email}
+				required
 			/>
 		</div>
 
@@ -54,14 +53,26 @@
 			<label class="label">
 				<span class="label-text text-lg">First Name</span>
 			</label>
-			<input class="input input-bordered" type="text" placeholder="John" bind:value={firstName} />
+			<input
+				class="input input-bordered"
+				type="text"
+				placeholder="John"
+				bind:value={firstName}
+				required
+			/>
 		</div>
 
 		<div class="form-control">
 			<label class="label">
 				<span class="label-text text-lg">Last Name</span>
 			</label>
-			<input class="input input-bordered" type="text" placeholder="Doe" bind:value={lastName} />
+			<input
+				class="input input-bordered"
+				type="text"
+				placeholder="Doe"
+				bind:value={lastName}
+				required
+			/>
 		</div>
 
 		<div class="form-control">
@@ -73,6 +84,7 @@
 				type="tel"
 				placeholder="+1 (234) 567 8900"
 				bind:value={phoneNumber}
+				required
 			/>
 		</div>
 
@@ -85,6 +97,7 @@
 				type="password"
 				placeholder="password123"
 				bind:value={password}
+				required
 			/>
 		</div>
 
@@ -97,6 +110,7 @@
 				type="password"
 				placeholder="password123"
 				bind:value={confirmPassword}
+				required
 			/>
 		</div>
 

@@ -1,6 +1,5 @@
-import { API_URL, ENCRYPTION_KEY } from '$lib/consts';
+import { API_URL } from '$lib/consts';
 import type { FairRegistration } from '$lib/types';
-import { AES } from 'crypto-js';
 
 export async function registerFair(fair: FairRegistration, apikey: string) {
 	let res;
@@ -10,7 +9,7 @@ export async function registerFair(fair: FairRegistration, apikey: string) {
 			body: JSON.stringify(fair),
 			headers: {
 				'Content-Type': 'application/json',
-				'x-api-key': await AES.decrypt(apikey, ENCRYPTION_KEY).toString()
+				'x-api-key': apikey
 			}
 		});
 	} catch (e) {
@@ -18,7 +17,7 @@ export async function registerFair(fair: FairRegistration, apikey: string) {
 		throw e;
 	}
 	if (!res.ok) {
-		throw new Error('Error creating fairs');
+		console.error('Error creating fairs');
 	}
 	return (await res.json()) as FairRegistration;
 }

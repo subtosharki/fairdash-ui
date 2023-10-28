@@ -1,10 +1,14 @@
-import type {GetUserModes, User} from '$lib/types';
+import type { GetUserModes, User } from '$lib/types';
 import { API_URL } from '$lib/consts';
 
 export async function getUserBy(mode: GetUserModes, src: string) {
-	let res;
+	let res,
+		endpoint = `${API_URL}/users/${mode}`;
+	if (mode !== 'apikey') {
+		endpoint += `/${src}`;
+	}
 	try {
-		res = await fetch(`${API_URL}/user/${mode}/${src}`, {
+		res = await fetch(endpoint, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'

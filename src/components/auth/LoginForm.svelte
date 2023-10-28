@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { login } from '$lib/auth/login';
 	import { goto } from '$app/navigation';
+	import { getALlFairs } from '$lib/fairs/getAll';
 
 	let email, password;
 </script>
@@ -10,12 +11,21 @@
 		<form
 			class="bg-base-100 p-6 rounded-lg shadow-lg"
 			on:submit={async () => {
-				let [apikey, role] = await login(email, password);
+				let [apikey, role, id] = await login(email, password);
 				localStorage.setItem('apikey', apikey);
-				if (role === 'organizer') {
-					await goto('/organizer/dashboard');
+				switch (role) {
+					case 'organizer':
+						const ownersFairs = await getALlFairs(id);
+						if (!ownersFairs) {
+							await goto('/organizer/fair/register');
+						} else {
+							await goto('/organizer/fair/dashboard');
+						}
+						break;
+					case 'user':
+						await goto('/dashboard');
+						break;
 				}
-				await goto('/dashboard');
 			}}
 		>
 			<h1 class="text-2xl font-bold mb-6 text-center">Login</h1>
@@ -27,6 +37,7 @@
 					placeholder="example@email.com"
 					autocomplete
 					bind:value={email}
+					required
 				/>
 			</div>
 			<div class="mb-4">
@@ -37,6 +48,7 @@
 					placeholder="password123"
 					autocomplete
 					bind:value={password}
+					required
 				/>
 			</div>
 			<label class="block text-gray-700 text-right">

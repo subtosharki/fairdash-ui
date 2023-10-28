@@ -10,11 +10,11 @@ export async function register(
 	confirmPassword: string,
 	asFairOrganizer: boolean
 ) {
-	let endpoint = `${API_URL}/auth/register`;
+	let endpoint = `${API_URL}/auth/register?fairOrganizer=`;
 	if (asFairOrganizer) {
-		endpoint += '?fairOrganizer=true';
+		endpoint += 'true';
 	} else {
-		endpoint += '?fairOrganizer=false';
+		endpoint += 'false';
 	}
 	let res;
 	try {
@@ -30,7 +30,7 @@ export async function register(
 		throw e;
 	}
 	if (!res.ok) {
-		throw new Error('Error registering users');
+		console.error('Error registering users');
 	}
 	return ((await res.json()) as APIKeyResponse)['apikey'];
 }

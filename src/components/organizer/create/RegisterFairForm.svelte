@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { registerFair } from '$lib/fairs/create';
+	import { registerFair } from '$lib/fairs/register';
 
 	export let apikey: string;
 	let fairDays = [newDay()],
