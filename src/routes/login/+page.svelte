@@ -1,9 +1,11 @@
-<script>
+<script lang="ts">
 	import LoginForm from '../../components/auth/LoginForm.svelte';
+	import {COMPANY_NAME} from "$lib/consts";
+
 </script>
 
 <svelte:head>
-	<title>FairDash - Login</title>
+	<title>{COMPANY_NAME} - Login</title>
 </svelte:head>
 
 <div class="hero min-h-screen bg-base-200">

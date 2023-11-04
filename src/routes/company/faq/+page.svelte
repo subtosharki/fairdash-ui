@@ -1,3 +1,7 @@
+<script lang="ts">
+	import {COMPANY_NAME} from "$lib/consts";
+</script>
+
 <svelte:head>
 	<title>FairDash - Frequently Asked Questions</title>
 </svelte:head>
@@ -7,7 +11,7 @@
 		<h1 class="text-2xl font-bold mb-6">Frequently Asked Questions</h1>
 
 		<div class="mb-6">
-			<h2 class="text-lg font-semibold">Question 1: What is FairDash?</h2>
+			<h2 class="text-lg font-semibold">Question 1: What is {COMPANY_NAME}?</h2>
 			<p>
 				FairDash is a revolutionary platform that bridges the gap between fairgoers and their
 				cherished fair foods. We bring the excitement of fair events right to your RV spot by

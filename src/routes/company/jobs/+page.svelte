@@ -1,5 +1,9 @@
+<script lang="ts">
+	import {COMPANY_NAME} from "$lib/consts";
+</script>
+
 <svelte:head>
-	<title>FairDash - Jobs</title>
+	<title>{COMPANY_NAME} - Jobs</title>
 </svelte:head>
 
 <body class="bg-base-200 p-8">
@@ -15,7 +19,7 @@
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Svelte Developers</h2>
 			<p>
-				We're looking for experienced Svelte developers to help us build and enhance the FairDash
+				We're looking for experienced Svelte developers to help us build and enhance the {COMPANY_NAME}
 				platform. If you have a passion for web development and want to be part of a dynamic team,
 				apply now. Responsibilities include:
 			</p>
@@ -30,11 +34,11 @@
 			<h2 class="text-lg font-semibold">Rust Developers with Axum Experience</h2>
 			<p>
 				We have an opening for Rust developers with expertise in the Axum framework. If you're
-				interested in working on the backend of FairDash and contributing to our success, join us.
+				interested in working on the backend of {COMPANY_NAME} and contributing to our success, join us.
 				Responsibilities include:
 			</p>
 			<ul class="list-disc ml-6">
-				<li>Developing and maintaining the backend of the FairDash platform using Rust and Axum</li>
+				<li>Developing and maintaining the backend of the {COMPANY_NAME} platform using Rust and Axum</li>
 				<li>Optimizing server performance and handling requests efficiently</li>
 				<li>Collaborating with the front-end team to create a seamless user experience</li>
 			</ul>
@@ -59,7 +63,7 @@
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Marketing Specialists</h2>
 			<p>
-				We're looking for marketing specialists to help promote the FairDash platform and engage
+				We're looking for marketing specialists to help promote the {COMPANY_NAME} platform and engage
 				with our user community. If you have experience in digital marketing and a creative mindset,
 				join our marketing team. Responsibilities include:
 			</p>
@@ -73,7 +77,7 @@
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Community Manager</h2>
 			<p>
-				We're seeking a Community Manager to engage with our users and build a strong FairDash
+				We're seeking a Community Manager to engage with our users and build a strong {COMPANY_NAME}
 				community. If you're a social media enthusiast and a community builder, this role is for
 				you. Responsibilities include:
 			</p>
@@ -87,12 +91,12 @@
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Graphic Designer</h2>
 			<p>
-				We're in need of a Graphic Designer to create visual assets, enhancing the FairDash branding
+				We're in need of a Graphic Designer to create visual assets, enhancing the {COMPANY_NAME} branding
 				and user experience. If you have a creative eye for design, join our team. Responsibilities
 				include:
 			</p>
 			<ul class="list-disc ml-6">
-				<li>Designing logos, graphics, and marketing materials to support FairDash branding</li>
+				<li>Designing logos, graphics, and marketing materials to support {COMPANY_NAME} branding</li>
 				<li>
 					Collaborating with the marketing and development teams to create visually appealing
 					content
@@ -104,9 +108,9 @@
 		<div class="mb-6">
 			<h2 class="text-lg font-semibold">Other Positions</h2>
 			<p>
-				If you're passionate about FairDash and believe you can contribute to our success, we'd love
+				If you're passionate about {COMPANY_NAME} and believe you can contribute to our success, we'd love
 				to hear from you. We're open to considering candidates for various roles and skills that can
-				help us grow. Apply and let us know how you can make a difference at FairDash.
+				help us grow. Apply and let us know how you can make a difference at {COMPANY_NAME}.
 			</p>
 		</div>
 	</div>

@@ -1,5 +1,9 @@
+<script lang="ts">
+	import {COMPANY_NAME} from "$lib/consts";
+</script>
+
 <svelte:head>
-	<title>FairDash - Contact Us</title>
+	<title>{COMPANY_NAME} - Contact Us</title>
 </svelte:head>
 
 <div class="min-h-screen flex items-center justify-center bg-base-200">

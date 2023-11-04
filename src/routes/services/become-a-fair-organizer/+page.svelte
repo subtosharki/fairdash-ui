@@ -1,9 +1,10 @@
 <script lang="ts">
 	import RegisterForm from '../../../components/auth/RegisterForm.svelte';
+	import {COMPANY_NAME} from "$lib/consts";
 </script>
 
 <svelte:head>
-	<title>FairDash - Become an Organizer</title>
+	<title>{COMPANY_NAME} - Become an Organizer</title>
 </svelte:head>
 
 <div class="min-h-screen flex items-center justify-center bg-base-200">
@@ -12,21 +13,21 @@
 			<h1 class="text-3xl font-bold mb-6 text-accent-400 text-center">Become a Fair Organizer</h1>
 
 			<div class="mb-6">
-				<h2 class="text-xl font-semibold mb-3 text-accent-400">Why Choose FairDash?</h2>
+				<h2 class="text-xl font-semibold mb-3 text-accent-400">Why Choose {COMPANY_NAME}?</h2>
 				<p class="mb-3">
-					FairDash is your perfect partner for a successful fair event! We provide a user-friendly
+					{COMPANY_NAME} is your perfect partner for a successful fair event! We provide a user-friendly
 					platform that simplifies fair management and promotes your event to a wider audience.
 				</p>
 				<p class="mb-3">Here's why you should become a Fair Organizer:</p>
 				<ol class="list-decimal list-inside pl-5">
 					<li class="mb-2">
-						Seamless Fair Management: FairDash streamlines fair organization, eliminating paperwork
+						Seamless Fair Management: {COMPANY_NAME} streamlines fair organization, eliminating paperwork
 						and simplifying processes. You can create, manage, and customize your fair events with
 						ease.
 					</li>
 					<li class="mb-2">
 						Wider Reach: Connect with more fairgoers and vendors, attracting a broader audience to
-						your event. FairDash provides a platform to promote your fair and reach a larger, more
+						your event. {COMPANY_NAME} provides a platform to promote your fair and reach a larger, more
 						diverse audience.
 					</li>
 					<li class="mb-2">
@@ -45,7 +46,7 @@
 						financial transactions.
 					</li>
 					<li class="mb-2">
-						User-Friendly Interface: FairDash offers an intuitive and user-friendly interface for
+						User-Friendly Interface: {COMPANY_NAME} offers an intuitive and user-friendly interface for
 						both fair organizers and participants. You don't need to be a tech expert to use it
 						effectively.
 					</li>
@@ -54,7 +55,7 @@
 						experiences that cater to your audience's interests and preferences.
 					</li>
 					<li class="mb-2">
-						Mobile Accessibility: Access FairDash from anywhere, anytime. Our platform is optimized
+						Mobile Accessibility: Access {COMPANY_NAME} from anywhere, anytime. Our platform is optimized
 						for mobile devices, so you can manage your fair on the go.
 					</li>
 				</ol>

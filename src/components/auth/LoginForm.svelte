@@ -16,7 +16,7 @@
 				switch (role) {
 					case 'organizer':
 						const ownersFairs = await getALlFairs(id);
-						if (!ownersFairs) {
+						if (ownersFairs.length === 0) {
 							await goto('/organizer/fair/register');
 						} else {
 							await goto('/organizer/fair/dashboard');

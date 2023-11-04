@@ -1,10 +1,11 @@
-<script>
-	import { getALlFairs } from '$lib/fairs/getAll.ts';
-	import { getUserBy } from '$lib/users/getBy.ts';
+<script lang="ts">
+	import { getALlFairs } from '$lib/fairs/getAll';
+	import { getUserBy } from '$lib/users/getBy';
+	import {COMPANY_NAME} from "$lib/consts";
 </script>
 
 <svelte:head>
-	<title>FairDash - Upcoming Fairs</title>
+	<title>{COMPANY_NAME} - Upcoming Fairs</title>
 </svelte:head>
 
 <div class="bg-base-200 min-h-screen p-4">

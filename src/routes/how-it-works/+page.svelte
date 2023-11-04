@@ -1,9 +1,11 @@
 <script lang="ts">
+	import {COMPANY_NAME} from "$lib/consts";
+
 	const boxes = [
 		{
 			title: 'For Fair Owners',
 			description:
-				'Organizing a fantastic fairs event experience is easier than ever with FairDash. Fair owners can seamlessly manage every aspect of their events with our platform.',
+				`Organizing a fantastic fairs event experience is easier than ever with ${COMPANY_NAME}. Fair owners can seamlessly manage every aspect of their events with our platform.`,
 			list: [
 				{
 					title: 'Create Your Fair',
@@ -25,17 +27,17 @@
 		{
 			title: 'For Vendors',
 			description:
-				'Are you a fairs vendor looking to boost your business and offer a top-notch experience to fairs-goers? FairDash is your perfect partner for reaching a wider audience and ensuring a hassle-free experience.',
+				`Are you a fairs vendor looking to boost your business and offer a top-notch experience to fairs-goers? ${COMPANY_NAME} is your perfect partner for reaching a wider audience and ensuring a hassle-free experience.`,
 			list: [
 				{
 					title: 'Full Menu Control',
 					description:
-						"With FairDash, you're in control. Manage your menu in real time, easily update item availability, and keep your offerings fresh and exciting for your customers."
+						`With ${COMPANY_NAME}, you're in control. Manage your menu in real time, easily update item availability, and keep your offerings fresh and exciting for your customers.`
 				},
 				{
 					title: 'Seamless Transactions',
 					description:
-						'Say goodbye to the complexities of payment processing. FairDash handles transactions effortlessly, ensuring secure and convenient payments for your customers.'
+						`Say goodbye to the complexities of payment processing. ${COMPANY_NAME} handles transactions effortlessly, ensuring secure and convenient payments for your customers.`
 				},
 				{
 					title: 'Fair Dashboards',
@@ -47,7 +49,7 @@
 		{
 			title: 'For Fair-goers',
 			description:
-				'At FairDash, we understand that a day at the fairs is all about indulgence and fun.',
+				`At ${COMPANY_NAME}, we understand that a day at the fairs is all about indulgence and fun.`,
 			list: [
 				{
 					title: 'Effortless Ordering',
@@ -57,7 +59,7 @@
 				{
 					title: 'Real-Time Updates',
 					description:
-						"Wondering if your favorite treat is still available? FairDash keeps you informed with real-time updates on vendor menus. You'll never miss out on your desired fairs food, and you can discover exciting new options as well."
+						`Wondering if your favorite treat is still available? ${COMPANY_NAME} keeps you informed with real-time updates on vendor menus. You'll never miss out on your desired fairs food, and you can discover exciting new options as well.`
 				},
 				{
 					title: 'Secure Payments',
@@ -70,7 +72,7 @@
 </script>
 
 <svelte:head>
-	<title>FairDash - How it Works</title>
+	<title>{COMPANY_NAME} - How it Works</title>
 </svelte:head>
 
 <section class="py-16 bg-base-200">

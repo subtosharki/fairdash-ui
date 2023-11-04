@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+import {COMPANY_NAME} from "$lib/consts";
 </script>
 
 <svelte:head>
@@ -12,7 +13,7 @@
 		<div class="mb-8">
 			<h2 class="text-xl font-semibold mb-4">Our Mission</h2>
 			<p>
-				At FairDash, our mission is to revolutionize the fair event dining experience. We believe
+				At {COMPANY_NAME}, our mission is to revolutionize the fair event dining experience. We believe
 				that everyone should have access to a wide variety of delicious fairground cuisine
 				conveniently delivered to their RV spot. We strive to make fair events even more enjoyable
 				by combining the vibrant fair atmosphere with the ease of food delivery.
@@ -22,7 +23,7 @@
 		<div class="mb-8">
 			<h2 class="text-xl font-semibold mb-4">Our Team</h2>
 			<p>
-				FairDash is powered by a dedicated team of individuals who are passionate about creating
+				{COMPANY_NAME} is powered by a dedicated team of individuals who are passionate about creating
 				memorable fair experiences. Our team includes:
 			</p>
 			<ul class="list-disc ml-6">
@@ -36,7 +37,7 @@
 		<div class="mb-8">
 			<h2 class="text-xl font-semibold mb-4">Our Story</h2>
 			<p>
-				FairDash was founded in [Year] by a group of fair enthusiasts who saw an opportunity to
+				{COMPANY_NAME} was founded in [Year] by a group of fair enthusiasts who saw an opportunity to
 				enhance the fair experience. Since then, we've been on a journey to connect fairgoers with
 				their favorite fair foods without the hassle of long lines. Our commitment to innovation and
 				customer satisfaction drives us every day.

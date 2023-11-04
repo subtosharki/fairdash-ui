@@ -6,6 +6,8 @@ export async function getUserBy(mode: GetUserModes, src: string) {
 		endpoint = `${API_URL}/users/${mode}`;
 	if (mode !== 'apikey') {
 		endpoint += `/${src}`;
+	} else {
+		endpoint += `?apikey=${src}`;
 	}
 	try {
 		res = await fetch(endpoint, {
@@ -19,7 +21,7 @@ export async function getUserBy(mode: GetUserModes, src: string) {
 		throw e;
 	}
 	if (res.status === 200) {
-		return (await res.json()) as User;
+		return (await res.json())['user'] as User;
 	} else {
 		return undefined;
 	}

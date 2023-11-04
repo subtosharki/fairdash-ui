@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { register } from '$lib/auth/register';
 	import { goto } from '$app/navigation';
+	import {COMPANY_NAME} from "$lib/consts";
 
 	export let asOrganizer = false;
-	export let title = 'Start Using FairDash Today!';
+	export let title = `Start Using ${COMPANY_NAME} Today!`;
 
 	let email, firstName, lastName, phoneNumber, password, confirmPassword;
 </script>

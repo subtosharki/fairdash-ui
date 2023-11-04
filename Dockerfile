@@ -15,4 +15,4 @@ RUN bun run build
 ENV PORT=${PORT:-3000}
 EXPOSE $PORT
 
-ENTRYPOINT ["bun", "./build"]
+CMD ["bun", "./build"]

@@ -1,10 +1,10 @@
-<script>
-	import { getUserBy } from '$lib/users/getBy.ts';
+<script lang="ts">
+	import { getUserBy } from '$lib/users/getBy';
 </script>
 
 {#if !localStorage.getItem('apikey')}
 	<head>
-		<title>FairDash - Refreshing</title>
+		<title>FairDash - Redirecting</title>
 		<meta http-equiv="Refresh" content="0; url='/login'" />
 	</head>
 {:else}
@@ -13,7 +13,7 @@
 	{:then user}
 		{#if !user || user.role !== 'organizer'}
 			<head>
-				<title>FairDash - Refreshing</title>
+				<title>FairDash - Redirecting</title>
 				<meta http-equiv="Refresh" content="0; url='/login'" />
 			</head>
 		{:else}
@@ -21,7 +21,7 @@
 		{/if}
 	{:catch error}
 		<head>
-			<title>FairDash - Refreshing</title>
+			<title>FairDash - Redirecting</title>
 			<meta http-equiv="Refresh" content="0; url='/login'" />
 		</head>
 	{/await}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import {COMPANY_NAME} from "$lib/consts";
+
 	const headers = [
 		{
 			href: '/how-it-works',
@@ -17,7 +19,7 @@
 
 <div class="navbar bg-base-100">
 	<div class="flex-1">
-		<a class="btn btn-ghost text-xl" href="/">FAIRDASH</a>
+		<a class="btn btn-ghost text-xl uppercase" href="/">{COMPANY_NAME}</a>
 	</div>
 	<div class="flex-none">
 		<ul class="menu menu-horizontal">
