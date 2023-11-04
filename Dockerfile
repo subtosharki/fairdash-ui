@@ -4,7 +4,7 @@ ENTRYPOINT ["top", "-b"]
 
 FROM oven/bun:latest
 WORKDIR /app
-EXPOSE 3000
+EXPOSE PORT
 COPY . .
 COPY package.json package.json
 COPY bun.lockb bun.lockb
