@@ -12,6 +12,5 @@ COPY package.json package.json
 COPY bun.lockb bun.lockb
 RUN bun i
 COPY . .
-ENTRYPOINT ["bun", "run", "build"]
-CMD ["cd", "build"]
-CMD ["bun", "run", "start"]
+CMD ["bun", "run", "build"]
+ENTRYPOINT ["bun", "./build"]
