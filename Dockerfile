@@ -2,15 +2,17 @@ FROM ubuntu:latest
 LABEL authors="subtosharki"
 ENTRYPOINT ["top", "-b"]
 
-FROM oven/bun:latest
+FROM oven/bun
+
 WORKDIR /app
+COPY package.json package.json
+RUN bun i
+
+COPY . .
+RUN bun run build
+
 # checks for railway port
 ENV PORT=${PORT:-3000}
 EXPOSE $PORT
-COPY . .
-COPY package.json package.json
-COPY bun.lockb bun.lockb
-RUN bun i
-COPY . .
-CMD ["bun", "run", "build"]
+
 ENTRYPOINT ["bun", "./build"]
