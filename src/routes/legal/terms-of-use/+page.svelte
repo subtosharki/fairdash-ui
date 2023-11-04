@@ -12,7 +12,7 @@
 		},
 		{
 			title: 'Fair Owners and Vendors',
-			body: `Fair owners and vendors using ${COMPANY_NAME} must agree to additional terms and conditions that govern their use of the platform. Fair owners are responsible for the content they post on ${COMPANY_NAME}, including fairs event information and vendor listings. Vendors have control over their menu and availability and must adhere to ${'s policies.`
+			body: `Fair owners and vendors using ${COMPANY_NAME} must agree to additional terms and conditions that govern their use of the platform. Fair owners are responsible for the content they post on ${COMPANY_NAME}, including fairs event information and vendor listings. Vendors have control over their menu and availability and must adhere to ${COMPANY_NAME}'s policies.`
 		},
 		{
 			title: 'Intellectual Property',
