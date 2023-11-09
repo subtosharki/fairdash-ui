@@ -4,7 +4,7 @@ import type { Fair } from '$lib/types';
 export async function getALlFairs(ownerId?: string) {
 	let res;
 	try {
-		res = await fetch(`${API_URL}/fairs?ownerId=${ownerId ?? 'none'}`, {
+		res = await fetch(`${API_URL}/fairs${ownerId ? `?ownerId=${ownerId}` : ""}`, {
 			headers: {
 				'Content-Type': 'application/json'
 			}

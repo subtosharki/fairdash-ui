@@ -10,12 +10,8 @@ export async function register(
 	confirmPassword: string,
 	asFairOrganizer: boolean
 ) {
-	let endpoint = `${API_URL}/auth/register?fairOrganizer=`;
-	if (asFairOrganizer) {
-		endpoint += 'true';
-	} else {
-		endpoint += 'false';
-	}
+	let endpoint = `${API_URL}/auth/register`;
+	if (asFairOrganizer) endpoint += '?fairOrganizer=true';
 	let res;
 	try {
 		res = await fetch(endpoint, {
