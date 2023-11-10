@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { registerFair } from '$lib/fairs/register';
-	import {ObjectId } from 'mongodb';
 
 	export let apikey: string;
 	let fairDays = [newDay()],
@@ -13,9 +12,9 @@
 		camperSpotMap = '';
 
 	function newDay() {
-		const id = new ObjectId();
+		const id = performance.now();
 		return {
-			_id: id,
+			id,
 			day: '2023-10-16',
 			openingTime: '10:00',
 			closingTime: '23:00',
@@ -25,9 +24,9 @@
 		};
 	}
 
-	function newEvent(fairDayId: ObjectId) {
+	function newEvent(fairDayId: number) {
 		return {
-			_id: new ObjectId(),
+			id: performance.now(),
 			fairDayId,
 			name: 'Example Event - Fireworks',
 			description: 'Half-hour firework display for free!',
